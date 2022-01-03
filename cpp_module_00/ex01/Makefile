@@ -1,5 +1,5 @@
-NAME		= megaphone
-SRCS		= megaphone.cpp
+NAME		= phonebook
+SRCS		= PhoneBook.cpp Contact.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -17,7 +17,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(OBJS) $(CXXFLAGS) $(LDLIBS) -o $(NAME)
 	@echo "$(CCBLUE_BOLD) >>> make $(NAME) done!  <<< $(CCEND)"
 
-%.o: %.cpp
+%.o: %.cpp *.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
@@ -32,13 +32,4 @@ re: fclean all
 
 test: CFLAGS += -g3 -fsanitize=address
 test: clean all
-	@echo
-	@echo "$(CCBLUE) >>> testing <<< $(CCEND)"
-	./$(NAME)
-	@echo 
-	./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
-	@echo 
-	./$(NAME) aâãä한글źżžz
-	@echo
-	./$(NAME) "Chloëè öõóóośćch Saldaña ëèñ æӝӟӫ αβγδε..φχψω"
 
