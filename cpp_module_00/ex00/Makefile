@@ -5,6 +5,13 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
+UNAME		:= $(shell uname)
+ifeq ($(UNAME),Darwin)
+	CXXFLAGS	+= -D MACOS
+else
+	CXXFLAGS	+= -D LINUX
+endif
+
 CCBLUE		= \033[34m
 CCBLUE_BOLD	= \033[1;34m
 CCEND		= \033[0m

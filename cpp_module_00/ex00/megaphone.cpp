@@ -38,7 +38,12 @@ void prn_upper(const char *str)
 
 int main(int ac, char **av)
 {
+#ifdef MACOS
+	setlocale(LC_ALL, "en_US.UTF-8");
+	std::wcout.imbue(std::locale("en_US.UTF-8"));
+#else
 	std::setlocale(LC_ALL, "en_US.utf8");
+#endif
 	if (ac == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
