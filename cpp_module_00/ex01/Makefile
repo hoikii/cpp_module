@@ -30,6 +30,6 @@ fclean: clean
 
 re: fclean all
 
-test: CFLAGS += -g3 -fsanitize=address
+test: CXXFLAGS += -g3 -fsanitize=address
 test: clean all
 

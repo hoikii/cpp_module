@@ -1,7 +1,7 @@
-NAME		= banktest
-SRCS		= Account.cpp tests.cpp
+NAME		= brrrrr
+SRCS		= Zombie.cpp ZombieHorde.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
-HEADERS		= Account.hpp
+HEADERS		= Zombie.hpp
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
