@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 03:24:29 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/05 10:30:21 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/05 14:33:50 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,31 @@ int main() {
 	cout << "address of str (using ref): " << &stringREF << endl << endl;
 
 	cout << "print using ptr : " << *stringPTR << endl;
-	cout << "print using ref : " << stringREF << endl;
+	cout << "print using ref : " << stringREF << endl << endl;
 
 #if 0
-	int n = 1;
-	int *ptr = &n;
-	int &ref = n;
+	str.append(" MODDED");
+	cout << "(append to str) str : " << str << endl;
+	cout << "(append to str) ptr : " << *stringPTR << endl;
+	cout << "(append to str) ref : " << stringREF << endl << endl;
 
-	cout << "\n\n  n = " << n << endl;
-	cout << "ptr = " << *ptr << endl;
-	cout << "ref = " << ref << endl;
+	(*stringPTR).append(" PTR");
+	cout << "(append to ptr) str : " << str << endl;
+	cout << "(append to ptr) ptr : " << *stringPTR << endl;
+	cout << "(append to ptr) ref : " << stringREF << endl << endl;
 
-	cout << "\nchange n to 21" << endl;
-	n = 21;
-	cout << "  n = " << n << endl;
-	cout << "ptr = " << *ptr << endl;
-	cout << "ref = " << ref << endl;
+	stringREF.append(" REF");
+	cout << "(append to ref) str : " << str << endl;
+	cout << "(append to ref) ptr : " << *stringPTR << endl;
+	cout << "(append to ref) ref : " << stringREF << endl << endl;
 
-	cout << "\nchange *ptr to 42" << endl;
-	*ptr = 42;
-	cout << "  n = " << n << endl;
-	cout << "ptr = " << *ptr << endl;
-	cout << "ref = " << ref << endl;
-
-	cout << "\nchange ref to 4242" << endl;
-	ref = 4242;
-	cout << "  n = " << n << endl;
-	cout << "ptr = " << *ptr << endl;
-	cout << "ref = " << ref << endl;
+	std::string another_str ="THIS IS ANOTHER BRAIN";
+	stringPTR = &another_str;
+	cout << "(ptr refers another string) ptr : "<< *stringPTR << endl << endl;
+	// &stringREF = another_str;	// Compile error: reference cannot be reassigned.
+	stringREF = another_str;
+	cout << "(changed by ref) str: " << str << endl;
+	cout << "(changed by ref) ref: " << stringREF << endl;
 #endif
 	return 0;
 }
