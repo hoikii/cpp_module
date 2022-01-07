@@ -1,5 +1,5 @@
 NAME		= violence
-SRCS		= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp HumanC.cpp
+SRCS		= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -42,6 +42,6 @@ fclean: clean
 
 re: fclean all
 
-test: CXXFLAGS += -g3 -fsanitize=address
+test: CXXFLAGS += -g3 -fsanitize=address -D DEBUG
 test: clean all
 

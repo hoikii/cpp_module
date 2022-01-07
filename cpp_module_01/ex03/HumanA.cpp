@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 01:02:26 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/05 18:05:36 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/07 16:44:01 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,9 @@ HumanA::HumanA(std::string name, Weapon &w)
 void HumanA::attack(void) {
 	cout << this->name << " attacks with his " << this->weapon.getType() << endl;
 }
+
+#ifdef DEBUG
+void HumanA::setWeapon(Weapon &w) {
+	this->weapon = w;
+}
+#endif

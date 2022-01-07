@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 02:33:20 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/05 10:18:07 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/07 16:45:22 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include "HumanC.hpp"
 
 using std::cout;
 using std::endl;
@@ -26,6 +25,11 @@ int main() {
 		bob.attack();
 		club.setType("some other type of club");
 		bob.attack();
+#ifdef DEBUG
+		Weapon another_weapon = Weapon("another weapon");
+		bob.setWeapon(another_weapon);
+		cout << << "type of club: " << club.getType() << endl;
+#endif
 	}
 	cout << endl;
 	{
@@ -37,11 +41,4 @@ int main() {
 		jim.attack();
 	}
 	cout << endl;
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanC ccc("CCC", club);
-		ccc.attack();
-		club.setType("some other type of club");
-		ccc.attack();
-	}
 }
