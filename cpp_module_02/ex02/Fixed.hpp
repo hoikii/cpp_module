@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:07:31 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/08 01:47:08 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 13:22:57 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Fixed {
 
 		// assign operator
 		Fixed& operator=(const Fixed& ref);
+		Fixed& operator=(const int &ref);
+		Fixed& operator=(const float& ref);
 
 		// comparison ops
 		bool operator>(const Fixed& operand) const;
@@ -53,9 +55,11 @@ class Fixed {
 		Fixed& operator--(void);
 		Fixed operator--(int);
 
-		// s
+		// static member functions
 		static Fixed& max(Fixed& a, Fixed& b);
+		static Fixed& min(Fixed& a, Fixed& b);
 		static const Fixed& max(const Fixed &a, const Fixed &b);
+		static const Fixed& min(const Fixed &a, const Fixed &b);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);

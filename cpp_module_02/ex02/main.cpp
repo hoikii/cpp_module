@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:13:33 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/08 11:15:53 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 13:28:25 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,19 @@ int main() {
 
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-	Fixed c = Fixed(3);
-	Fixed d = Fixed( (a < b) + 1 );    // d = 2
+	Fixed c = 3;
+	Fixed d = (a < b) + 1 ;    // d = 2
+	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "c + d = " << (c + d) << std::endl;
 	std::cout << "c - d = " << (c - d) << std::endl;
 	std::cout << "c * d = " << (c * d) << std::endl;
 	std::cout << "c / d = " << (c / d) << std::endl;
+	std::cout << "c > d = " << (c > d) << std::endl;
+	std::cout << "c < d = " << (c < d) << std::endl;
+	std::cout << "c >= d = " << (c >= d) << std::endl;
+	std::cout << "c <= d = " << (c <= d) << std::endl;
+	std::cout << "c != d = " << (c != d) << std::endl;
+	std::cout << "c == d = " << (c == d) << std::endl;
 
 	return 0;
 }

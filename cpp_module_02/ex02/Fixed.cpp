@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:11:41 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/08 01:48:24 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 13:42:30 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ Fixed::Fixed(const Fixed& ref) {
 // ===================  Operators - Assign =====================
 Fixed& Fixed::operator=(const Fixed& ref) {
 	value = ref.getRawBits();
+	return *this;
+}
+
+Fixed& Fixed::operator=(const int& ref) {
+	*this = Fixed(ref);
+	return *this;
+}
+
+Fixed& Fixed::operator=(const float& ref) {
+	*this = Fixed(ref);
 	return *this;
 }
 
@@ -117,15 +127,15 @@ Fixed Fixed::operator--(int) {
 	return tmp;
 }
 
-// ===================  Member Functions  =====================
-int Fixed::getRawBits(void) const {
-	return value;
-}
-
-// =================== sv =====================
-
+// =================== Static Member Functions =====================
 Fixed& Fixed::max(Fixed& a, Fixed& b) {
 	if (a > b)
+		return a;
+	return b;
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+	if (a < b)
 		return a;
 	return b;
 }
@@ -134,6 +144,17 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
 	if (a > b)
 		return a;
 	return b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+	if (a < b)
+		return a;
+	return b;
+}
+
+// ===================  Member Functions  =====================
+int Fixed::getRawBits(void) const {
+	return value;
 }
 
 void Fixed::setRawBits(int const raw) {
