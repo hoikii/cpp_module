@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:11:41 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/07 18:39:35 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 13:17:51 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Fixed::~Fixed() {
 Fixed::Fixed(const Fixed& ref) {
 	std::cout << "Copy constructor called" << std::endl;
 	value = ref.getRawBits();
+	// *this = ref;
 }
 
 Fixed& Fixed::operator=(const Fixed& ref) {
