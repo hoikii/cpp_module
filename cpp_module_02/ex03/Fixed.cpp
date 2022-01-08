@@ -6,11 +6,10 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:11:41 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/08 15:00:28 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 15:02:13 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <cmath>
 #include "Fixed.hpp"
 

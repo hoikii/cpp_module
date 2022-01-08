@@ -6,12 +6,14 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:07:31 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/08 15:01:06 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/08 15:52:37 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+# include <ostream>
 
 class Fixed {
 	private:
