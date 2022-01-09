@@ -6,26 +6,28 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:52:38 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/09 16:53:16 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/09 17:33:05 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
-	ClapTrap c1("aaa");
-	ClapTrap c2("bbb");
+	DiamondTrap t1("ttt");
 
 	std::cout << "\n";
-	ClapTrap c3(c1);
-	ClapTrap c4;
-	c4 = c2;
+
+	t1.whoAmI();
+	std::cout << "hitpoints: " << t1.getHitPoints();
+	std::cout << "\nEnerypoints: " << t1.getEnergyPoints();
+	std::cout << "\nAttackdamage: " << t1.getAttackDamage() << std::endl;
 
 	std::cout << "\n";
-	c1.attack("bbb");
-	c2.takeDamage(c1.getAttackDamage());
-	c2.beRepaired(100);
+
+	t1.attack("bbb");
+	t1.guardGate();
+	t1.highFiveGuys();
 
 	std::cout << "\n";
 	return 0;

@@ -6,26 +6,26 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:52:38 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/09 16:53:16 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/09 02:08:18 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-	ClapTrap c1("aaa");
-	ClapTrap c2("bbb");
+	FragTrap f1("aaa");
+	FragTrap f2("bbb");
 
 	std::cout << "\n";
-	ClapTrap c3(c1);
-	ClapTrap c4;
-	c4 = c2;
+
+	f1.attack("bbb");
+	f2.takeDamage(f1.getAttackDamage());
+	f2.beRepaired(10);
 
 	std::cout << "\n";
-	c1.attack("bbb");
-	c2.takeDamage(c1.getAttackDamage());
-	c2.beRepaired(100);
+
+	f1.highFiveGuys();
 
 	std::cout << "\n";
 	return 0;

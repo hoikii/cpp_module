@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 17:52:38 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/09 16:53:16 by kanlee           ###   ########.fr       */
+/*   Created: 2022/01/08 18:08:44 by kanlee            #+#    #+#             */
+/*   Updated: 2022/01/09 02:07:18 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main() {
-	ClapTrap c1("aaa");
-	ClapTrap c2("bbb");
+# include "ClapTrap.hpp"
 
-	std::cout << "\n";
-	ClapTrap c3(c1);
-	ClapTrap c4;
-	c4 = c2;
+class FragTrap : public ClapTrap {
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		~FragTrap();
+		FragTrap(const FragTrap& ref);
+		FragTrap& operator=(const FragTrap& ref);
 
-	std::cout << "\n";
-	c1.attack("bbb");
-	c2.takeDamage(c1.getAttackDamage());
-	c2.beRepaired(100);
+		void attack(std::string const & target);
+		void highFiveGuys(void);
+};
 
-	std::cout << "\n";
-	return 0;
-}
+#endif

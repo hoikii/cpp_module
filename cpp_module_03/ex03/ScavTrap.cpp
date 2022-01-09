@@ -6,24 +6,28 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 18:10:06 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/09 17:24:41 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/09 18:06:17 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
+const int ScavTrap::default_hitpoints = 100;
+const int ScavTrap::default_energypoints = 50;
+const int ScavTrap::default_attackdamage = 20;
+
 ScavTrap::ScavTrap() : ClapTrap() {
-	_hitpoints = 100;
-	_energypoints = 50;
-	_attack_damage = 20;
+	_hitpoints = ScavTrap::default_hitpoints;
+	_energypoints = ScavTrap::default_energypoints;
+	_attack_damage = ScavTrap::default_attackdamage;
 	std::cout << "ScavTrap " << _name << ": Default Constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	_hitpoints = 100;
-	_energypoints = 50;
-	_attack_damage = 20;
+	_hitpoints = ScavTrap::default_hitpoints;
+	_energypoints = ScavTrap::default_energypoints;
+	_attack_damage = ScavTrap::default_attackdamage;
 	std::cout << "ScavTrap " << _name << ": Constructor called" << std::endl;
 }
 
