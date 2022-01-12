@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 12:50:50 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/11 16:55:29 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/12 01:26:49 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class WrongAnimal {
 	public:
 		WrongAnimal();
 		~WrongAnimal();
-		WrongAnimal( WrongAnimal const & src );
-		WrongAnimal&	operator=( WrongAnimal const & rhs );
+		WrongAnimal(const WrongAnimal& src);
+		WrongAnimal& operator=(const WrongAnimal& rhs);
 
 		std::string getType(void) const;
 		void makeSound(void);

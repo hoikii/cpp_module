@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:56:58 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/11 16:56:13 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/12 01:25:27 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Dog : public Animal {
 	public:
 		Dog();
 		~Dog();
-		Dog( Dog const & src );
-		Dog&	operator=( Dog const & rhs );
+		Dog(const Dog& src);
+		Dog& operator=(const Dog& rhs);
 
 		void makeSound(void);
 };

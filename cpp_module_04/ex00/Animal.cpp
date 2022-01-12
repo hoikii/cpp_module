@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 12:50:50 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/11 15:53:39 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/12 00:58:33 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ Animal::~Animal() {
 	std::cout << "Animal Destructor called" << std::endl;
 }
 
-Animal::Animal( const Animal & src ) {
+Animal::Animal(const Animal& src) {
+	std::cout << "Animal Copy Ctor called" << std::endl;
 	this->type = src.getType();
 }
 
-Animal&	Animal::operator=( Animal const & rhs )
-{
+Animal&	Animal::operator=(const Animal& rhs) {
+	std::cout << "Animal Assign op called" << std::endl;
 	this->type = rhs.getType();
 	return *this;
 }
