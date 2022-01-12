@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:56:58 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/12 01:24:46 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/12 22:59:57 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal {
 		Cat(const Cat& src);
 		Cat& operator=(const Cat& rhs);
 
-		void makeSound(void);
+		virtual void makeSound(void) const;
 };
 
 #endif /* ************************************************************* CAT_H */
