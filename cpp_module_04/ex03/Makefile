@@ -1,5 +1,5 @@
 NAME		= a.out
-SRCS		= Animal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
+SRCS		= AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 HEADERS		= Fixed.hpp
 CXX			= c++
@@ -18,19 +18,21 @@ $(NAME): $(OBJS)
 	$(CXX) $(OBJS) $(CXXFLAGS) $(LDLIBS) -o $(NAME)
 	@echo "$(CCBLUE_BOLD) >>> make $(NAME) done!  <<< $(CCEND)"
 
-Animal.o: Animal.cpp Animal.hpp
+AMateria.o: AMateria.cpp AMateria.hpp ICharacter.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-Cat.o: Cat.cpp Cat.hpp Animal.hpp Brain.hpp
+Ice.o: Ice.cpp Ice.hpp AMateria.hpp ICharacter.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-Dog.o: Dog.cpp Dog.hpp Animal.hpp Brain.hpp
+Cure.o: Cure.cpp Cure.hpp AMateria.hpp ICharacter.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-Brain.o: Brain.cpp Brain.hpp
+Character.o: Character.cpp Character.hpp ICharacter.hpp AMateria.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-main.o: main.cpp Cat.hpp Dog.hpp Animal.hpp Brain.hpp
+MateriaSource.o: MateriaSource.cpp MateriaSource.hpp IMateriaSource.hpp AMateria.hpp ICharacter.hpp
+
+main.o: main.cpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

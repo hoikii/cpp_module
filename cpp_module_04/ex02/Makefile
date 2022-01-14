@@ -21,10 +21,10 @@ $(NAME): $(OBJS)
 Animal.o: Animal.cpp Animal.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-Cat.o: Cat.cpp Cat.hpp Animal.hpp
+Cat.o: Cat.cpp Cat.hpp Animal.hpp Brain.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-Dog.o: Dog.cpp Dog.hpp Animal.hpp
+Dog.o: Dog.cpp Dog.hpp Animal.hpp Brain.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 Brain.o: Brain.cpp Brain.hpp
