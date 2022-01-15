@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 01:13:39 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/15 02:58:10 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/15 13:20:43 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Form {
 
 	public:
 		Form(std::string, int, int);
-		~Form();
+		virtual ~Form();
 		Form(const Form& ref);
 		Form& operator=(const Form& rhs);
 
@@ -39,11 +39,16 @@ class Form {
 		int getExeGrade() const;
 
 		void beSigned(const Bureaucrat& who);
+		void chkExecutable(const Bureaucrat& executor) const;
+		virtual void execute(const Bureaucrat& executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			virtual const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
 			virtual const char* what() const throw();
 		};
 };
