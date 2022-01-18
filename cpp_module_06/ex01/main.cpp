@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:51:57 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/18 08:21:35 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/18 16:28:34 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 struct Data {
 	std::string name;
 	int age;
-  public:
+
 	Data(std::string name, int age) : name(name), age(age) {}
 };
 

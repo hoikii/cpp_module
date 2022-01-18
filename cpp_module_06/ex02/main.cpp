@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:21:55 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/18 15:44:46 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/18 16:29:16 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,19 @@ void identify(Base* p) {
 }
 
 void identify(Base& p) {
+	Base tmp;
 	try {
-		dynamic_cast<A&>(p);
+		tmp = dynamic_cast<A&>(p);
 		std::cout << "A - ";
 		return;
 	} catch (std::exception &e) {}
 	try {
-		dynamic_cast<B&>(p);
+		tmp = dynamic_cast<B&>(p);
 		std::cout << "B - ";
 		return;
 	} catch (std::exception &e) {}
 	try {
-		dynamic_cast<C&>(p);
+		tmp = dynamic_cast<C&>(p);
 		std::cout << "C - ";
 		return;
 	} catch (std::exception &e) {}
