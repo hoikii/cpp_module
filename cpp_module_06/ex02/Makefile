@@ -1,5 +1,5 @@
 NAME		= a.out
-SRCS		= main.cpp
+SRCS		= main.cpp A.cpp B.cpp C.cpp
 OBJS		= $(SRCS:.cpp=.o)
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -17,7 +17,16 @@ $(NAME): $(OBJS)
 	$(CXX) $(OBJS) $(CXXFLAGS) $(LDLIBS) -o $(NAME)
 	@echo "$(CCBLUE_BOLD) >>> make $(NAME) done!  <<< $(CCEND)"
 
-%.o: %.cpp
+A.o: A.cpp A.hpp Base.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+B.o: B.cpp B.hpp Base.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+C.o: C.cpp C.hpp Base.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+main.o: main.cpp Base.hpp A.hpp B.hpp C.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
