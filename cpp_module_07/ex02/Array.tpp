@@ -17,24 +17,24 @@
 #  error __FILE__ should only be included from Array.hpp
 # endif
 
-template <class T>
+template <typename T>
 Array<T>::Array() {
 	arr = NULL;
 	_size = 0;
 }
 
-template <class T>
+template <typename T>
 Array<T>::Array(unsigned int n) {
 	arr = new T[n];
 	_size = n;
 }
 
-template <class T>
+template <typename T>
 Array<T>::~Array() {
 	delete[] arr;
 }
 
-template <class T>
+template <typename T>
 Array<T>::Array(const Array& ref) {
 	arr = NULL;
 	if (ref._size > 0)
@@ -44,7 +44,7 @@ Array<T>::Array(const Array& ref) {
 	_size = ref._size;
 }
 
-template <class T>
+template <typename T>
 Array<T>& Array<T>::operator=(const Array& rhs) {
 	T* tmp = NULL;
 	if (rhs._size > 0)
@@ -57,14 +57,14 @@ Array<T>& Array<T>::operator=(const Array& rhs) {
 	return *this;
 }
 
-template <class T>
+template <typename T>
 T& Array<T>::operator[](size_t idx) const {
 	if (idx >= _size)
 		throw std::out_of_range("ArrayException: index out of range");
 	return arr[idx];
 }
 
-template <class T>
+template <typename T>
 unsigned int Array<T>::size() const {
 	return _size;
 }

@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 22:17:39 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/19 00:57:04 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/22 14:38:41 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main() {
 	std::cout << "\n\n";
 
 	// 자기대입
-	assign = assign;
+	assign = *&assign;
 	for (int i = 0; i < 10; i++)
 		std::cout << assign[i] << " ";
 	std::cout << "\n\n";

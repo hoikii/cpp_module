@@ -6,14 +6,14 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 22:13:44 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/19 00:10:53 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/01/22 14:39:06 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-template <class T>
+template <typename T>
 class Array {
 	private:
 		T* arr;
