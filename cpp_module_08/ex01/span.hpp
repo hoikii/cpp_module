@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:08:12 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/21 20:44:01 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 16:32:39 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Span {
 		unsigned int max_size;
 		std::vector<int> v;
 
-
+		unsigned int diffabs(int a, int b) const;
 
 	public:
 		Span(unsigned int size);
@@ -30,19 +30,17 @@ class Span {
 		Span& operator=(const Span& rhs);
 
 		unsigned int getSize() const;
-
 		void addNumber(const int n);
+		unsigned int shortestSpan(void) const;
+		unsigned int longestSpan(void) const;
+		void prn(void) const;
 
 		template <typename T>
 		void addNumber(T begin, T end) {
 			if (max_size - v.size() < (size_t)std::distance(begin, end))
 				throw SetIsFullException();
-			for (T it = begin; it != end; ++it)
-				v.push_back(*it);
+			v.insert(v.end(), begin, end);
 		};
-
-		unsigned int shortestSpan(void);
-		unsigned int longestSpan(void);
 
 		class SetIsFullException : public std::exception {
 			virtual const char* what() const throw();
@@ -50,10 +48,7 @@ class Span {
 		class NoSpanToFindException : public std::exception {
 			virtual const char* what() const throw();
 		};
+
 };
 
 #endif
-
-
-
-

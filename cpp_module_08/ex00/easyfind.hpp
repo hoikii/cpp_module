@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 04:00:02 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/21 01:01:15 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 15:00:00 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <algorithm>
 # include <stack>
 
-/* std::map takes not int but pair, so it's not subjects's need.
+/* std::map takes not int but pair, so it doesn't match subjects's need.
  * Passing map as argument will make compile error.
+ * if find failed, return last iter like std::find does.
 */
 template <typename T>
 typename T::iterator easyfind(T& t, int n) {

@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:07:34 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/21 20:43:24 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 16:35:22 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main() {
 	std::cout << "max span: " << sp.longestSpan() << "\n\n";
 
 	{
-		Span sp(1);
+		Span sp(10);
 		try {
 			sp.shortestSpan();
 		}
@@ -76,6 +76,8 @@ int main() {
 		std::cout << e.what() << std::endl;
 	}
 
+	// {1,3,7,12} should be added thrice.
+	sp.prn();
 	std::cout << "test done without failure." << std::endl;
 	return 0;
 }
