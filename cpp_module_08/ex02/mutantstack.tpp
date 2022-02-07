@@ -45,12 +45,12 @@ typename MutantStack<T>::iterator MutantStack<T>::end(void) {
 }
 
 template <typename T>
-typename MutantStack<T>::iterator MutantStack<T>::rbegin(void) {
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rbegin(void) {
 	return this->c.rbegin();
 }
 
 template <typename T>
-typename MutantStack<T>::iterator MutantStack<T>::rend(void) {
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rend(void) {
 	return this->c.rend();
 }
 

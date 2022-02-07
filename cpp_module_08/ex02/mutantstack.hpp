@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:47:49 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/21 21:37:27 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 18:44:17 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ class MutantStack : public std::stack<T> {
 		MutantStack& operator=(const MutantStack& rhs);
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 
 		iterator begin(void);
 		iterator end(void);
-		iterator rbegin(void);
-		iterator rend(void);
+		reverse_iterator rbegin(void);
+		reverse_iterator rend(void);
 };
 
 # include "mutantstack.tpp"

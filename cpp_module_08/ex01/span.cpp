@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:09:29 by kanlee            #+#    #+#             */
-/*   Updated: 2022/02/07 16:36:08 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 18:39:00 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ Span& Span::operator=(const Span& rhs) {
 
 unsigned int Span::diffabs(int a, int b) const {
 	if (a > b)
-		return ((unsigned int)a - (unsigned int)b);
+		return (static_cast<unsigned int>(a) - static_cast<unsigned int>(b));
 	else
-		return ((unsigned int)b - (unsigned int)a);
+		return (static_cast<unsigned int>(b) - static_cast<unsigned int>(a));
 }
 
 unsigned int Span::getSize() const {

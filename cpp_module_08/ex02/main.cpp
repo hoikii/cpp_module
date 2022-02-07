@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:47:27 by kanlee            #+#    #+#             */
-/*   Updated: 2022/01/22 14:56:02 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 18:54:44 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ int main() {
 	myst.push(4);
 	myst.push(5);
 
-	for (MutantStack<int>::iterator it = myst.begin(); it != myst.end(); ++it)
+	MutantStack<int>::iterator it;
+	for (it = myst.begin(); it != myst.end(); ++it)
 		std::cout << *it << "\n";
-
-
 	std::cout << "\n";
+
+	MutantStack<int>::reverse_iterator rit;
+	for (rit = myst.rbegin(); rit != myst.rend(); ++rit)
+		std::cout << *rit << "\n";
+	std::cout << "\n";
+
+
 	MutantStack<int> myst2(myst);
 	myst2 = *&myst2;
 	myst = myst2;

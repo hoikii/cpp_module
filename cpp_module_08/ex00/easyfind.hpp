@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 04:00:02 by kanlee            #+#    #+#             */
-/*   Updated: 2022/02/07 15:00:00 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/07 18:37:26 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 template <typename T>
 typename T::iterator easyfind(T& t, int n) {
 #if 1
-	return find(t.begin(), t.end(), n);
+	return std::find(t.begin(), t.end(), n);
 #else
 	typename T::iterator iter = t.begin();
 
