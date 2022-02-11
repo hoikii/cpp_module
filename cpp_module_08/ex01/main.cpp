@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:07:34 by kanlee            #+#    #+#             */
-/*   Updated: 2022/02/07 16:35:22 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/11 13:46:39 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int main() {
 	sp.addNumber(arr, arr + 4);
 	assert(sp.getSize() == 4);
 	assert(sp.shortestSpan() == 2);
-	assert(sp.longestSpan() == 5);
+	assert(sp.longestSpan() == 11);
 
 	std::vector<int> v(arr, arr + 4);
 	sp.addNumber(v.begin(), v.end());

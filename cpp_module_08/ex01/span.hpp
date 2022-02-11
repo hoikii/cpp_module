@@ -6,7 +6,7 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:08:12 by kanlee            #+#    #+#             */
-/*   Updated: 2022/02/07 16:32:39 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/11 13:47:11 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Span {
 		unsigned int max_size;
 		std::vector<int> v;
 
-		unsigned int diffabs(int a, int b) const;
-
 	public:
 		Span(unsigned int size);
 		~Span();
@@ -31,8 +29,8 @@ class Span {
 
 		unsigned int getSize() const;
 		void addNumber(const int n);
-		unsigned int shortestSpan(void) const;
 		unsigned int longestSpan(void) const;
+		unsigned int shortestSpan(void) const;
 		void prn(void) const;
 
 		template <typename T>

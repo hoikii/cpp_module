@@ -6,13 +6,15 @@
 /*   By: kanlee <kanlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 01:09:29 by kanlee            #+#    #+#             */
-/*   Updated: 2022/02/07 18:39:00 by kanlee           ###   ########.fr       */
+/*   Updated: 2022/02/11 13:47:18 by kanlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <algorithm>
-#include <climits>
+#include <numeric>
+#include <cmath>
 #include "span.hpp"
+#include <iostream>
 
 Span::Span(unsigned int size) : max_size(size) {
 	this->v.reserve(size);
@@ -35,13 +37,6 @@ Span& Span::operator=(const Span& rhs) {
 	return *this;
 }
 
-unsigned int Span::diffabs(int a, int b) const {
-	if (a > b)
-		return (static_cast<unsigned int>(a) - static_cast<unsigned int>(b));
-	else
-		return (static_cast<unsigned int>(b) - static_cast<unsigned int>(a));
-}
-
 unsigned int Span::getSize() const {
 	return v.size();
 }
@@ -52,24 +47,25 @@ void Span::addNumber(const int n) {
 	v.push_back(n);
 }
 
-unsigned int Span::shortestSpan(void) const {
-	if (v.size() < 2)
-		throw NoSpanToFindException();
-
-	unsigned int ret = UINT_MAX;;
-	for (size_t i = 1; i < v.size(); ++i)
-		ret = std::min(ret, diffabs(v[i], v[i - 1]));
-	return ret;
-}
-
 unsigned int Span::longestSpan(void) const {
 	if (v.size() < 2)
 		throw NoSpanToFindException();
 
-	unsigned int ret = 0;;
-	for (size_t i = 1; i < v.size(); ++i)
-		ret = std::max(ret, diffabs(v[i], v[i - 1]));
-	return ret;
+	unsigned int min = *std::min_element(v.begin(), v.end());
+	unsigned int max = *std::max_element(v.begin(), v.end());
+	return (max - min);
+}
+
+unsigned int Span::shortestSpan(void) const {
+	if (v.size() < 2)
+		throw NoSpanToFindException();
+
+	std::vector<int> copy(v);
+	std::sort(copy.begin(), copy.end());
+	std::adjacent_difference(copy.begin(), copy.end(), copy.begin());
+	for (std::vector<int>::iterator it = copy.begin(); it != copy.end(); ++it)
+		*it = std::abs(*it);
+	return (*std::min_element(copy.begin() + 1, copy.end()));
 }
 
 void Span::prn(void) const {
